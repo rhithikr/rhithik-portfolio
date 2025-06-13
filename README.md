@@ -9,7 +9,7 @@ Welcome to my personal strategy portfolio — a curated showcase of my work as a
 - Ways to work with me and get in touch
 
 🔗 **Live Portfolio:**  
-[Click here to view](https://<rhithikr>.github.io/rhithik-portfolio/)
+[Click here to view](https://rhithikr.github.io/rhithik-portfolio/)
 
 ---
 
