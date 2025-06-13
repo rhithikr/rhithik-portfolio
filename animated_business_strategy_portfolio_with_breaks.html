@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Strategy Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000000;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1526401281623-3794fcb17803?fit=crop&w=1500&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+    nav {
+      background: #121212;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #f1f1f1;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    section {
+      padding: 4rem 10%;
+      background-color: #000000;
+      border-bottom: 1px solid #333;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+    p, li {
+      font-size: 1.1rem;
+      color: #dcdcdc;
+    }
+    .usp-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     max-width: 960px;
+     margin: 2rem auto 0;
+     gap: 2rem;
+     justify-content: center;
+    }
+    .usp {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(255,255,255,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .usp:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.15);
+    }
+    .usp:hover h3, .usp:hover p {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin-top: 2rem;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+      font-size: 1rem;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #e0a800;
+      transform: scale(1.05);
+    }
+    footer {
+      background: #121212;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+    .contact-icons p i {
+      margin-right: 0.75rem;
+      color: #ffc107;
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header h1 {
+      animation: fadeSlideIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    header p {
+      animation: fadeSlideIn 1.5s ease-out forwards;
+      opacity: 0;
+    }
+  
+    .section-break {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 0 1rem;
+    }
+
+    .section-break hr {
+      width: 60%;
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #ffc107, transparent);
+      animation: glowLine 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowLine {
+      0% { opacity: 0.3; transform: scaleX(0.8); }
+      100% { opacity: 1; transform: scaleX(1); }
+    }
+    </style>
+
+</head>
+<body onscroll="revealSections()">
+  <header>
+    <h1>Rhithik Roshan</h1>
+    <p>Business Strategist | Data Analyst | Growth Consultant</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#usps">Strategy USPs</a>
+    <a href="#role">Current Role</a>
+    <a href="#projects">Projects</a>
+    <a href="#workwithme">Work With Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="section-break"><hr></div>
+  <section id="about" class="intro">
+    <h1>About Me</h1>
+    <p>I help businesses turn vision into measurable competitive advantage. With a blend of strategic insight and real-time execution, I’ve worked across sectors to deliver scalable, sustainable, and data-backed strategies. Whether you're a startup or an enterprise, I align your goals with tangible outcomes through structured planning, innovation frameworks, and cross-functional collaboration.</p>
+  </section>
+
+  <div class="section-break"><hr></div>
+  <section id="usps">
+    <h1>Business Strategy USPs</h1>
+    <div class="usp-grid">
+      <div class="usp">
+        <h3>Customer-Centric</h3>
+        <p>Every strategy is grounded in real customer insight to drive meaningful impact.</p>
+      </div>
+      <div class="usp">
+        <h3>Data-Driven</h3>
+        <p>Decisions backed by analytics, KPIs, and performance metrics, not assumptions.</p>
+      </div>
+      <div class="usp">
+        <h3>Scalable</h3>
+        <p>Designed to grow across geographies, markets, and product lines.</p>
+      </div>
+      <div class="usp">
+        <h3>Execution-Focused</h3>
+        <p>Detailed roadmaps ensure ideas don’t just stay on paper—they get implemented.</p>
+      </div>
+      <div class="usp">
+        <h3>Agile & Flexible</h3>
+        <p>Responsive strategies that pivot quickly with changing market dynamics.</p>
+      </div>
+      <div class="usp">
+        <h3>Industry-Adaptable</h3>
+        <p>Strategies tailored with sector-specific intelligence and proven frameworks.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-break"><hr></div>
+  <section id="role">
+    <h1>My Current Role</h1>
+    <p>As a Data Analyst, I work closely with the agency cell of my ship management company to analyze global shipping agencies and deliver actionable insights. My responsibilities include streamlining operations, projecting performance metrics, and assisting business heads in understanding business trends through clear and insightful dashboards.</p>
+    <p>In addition, I've co-developed a fatigue management product for seafarers that led to $250,000 in revenue. I'm currently involved in developing a port management platform to connect vendors, agencies, and ship owners/charterers.</p>
+  </section>
+
+  <div class="section-break"><hr></div>
+  <section id="projects">
+    <h1>Snippets From My Projects</h1>
+    <ul>
+      <li>Developed pricing models, logistics systems, and re-engineered operations to boost performance and profitability.</li>
+      <li>Created end-to-end ERP software for a national park to track inventory, sales, profits, and other KPIs, with actionable insights for growth.</li>
+      <li>Conducted nationwide market research for the minerals industry (coal, granite, marble, etc.) and advised on retail expansion strategy.</li>
+      <li>Helped brands identify the right go-to-market path, align marketing with product potential, and convert research into sales targets.</li>
+    </ul>
+  </section>
+
+  <div class="section-break"><hr></div>
+  <section id="workwithme">
+    <h1>Let's Talk Business First</h1>
+    <p>Before we talk numbers, let’s talk <em>you</em>. Every business is unique: its challenges, ambitions, and pace. I prefer to first understand where you are, where you want to go, and what’s standing in the way. Once we’ve had that conversation, I’ll tailor an approach and a rate that makes sense for the value I bring.</p>
+    <p>There’s no one-size-fits-all pricing. I work with flexibility, transparency, and a deep focus on outcomes. Let’s start with a conversation and build from there.</p>
+  </section>
+
+  <div class="section-break"><hr></div>
+  <section id="contact">
+    <h1>Let’s Connect</h1>
+    <div class="contact-icons">
+      <p><i class="fas fa-envelope"></i> rhithikofficial@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +91 7358-224-004</p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/rhithik" target="_blank">linkedin.com/in/rhithik</a></p>
+    </div>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rhithik Roshan | Crafted with strategy and intent.</p>
+  </footer>
+
+  <script>
+    function revealSections() {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('load', revealSections);
+    window.addEventListener('scroll', revealSections);
+  </script>
+</body>
+</html>
